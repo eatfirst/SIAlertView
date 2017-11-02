@@ -192,23 +192,29 @@ static SIAlertView *__si_alert_current_view;
     appearance.seperatorColor = [UIColor colorWithWhite:0 alpha:0.1];
     appearance.cornerRadius = 2;
     
-    appearance.defaultButtonBackgroundColor = [UIColor colorWithWhite:0.99 alpha:1];
-    appearance.cancelButtonBackgroundColor = [UIColor colorWithWhite:0.97 alpha:1];
-    appearance.destructiveButtonBackgroundColor = [UIColor colorWithWhite:0.99 alpha:1];
+    appearance.defaultButtonBackgroundColor = [UIColor darkGrayColor];
+    appearance.cancelButtonBackgroundColor = [UIColor greenColor];
+    appearance.destructiveButtonBackgroundColor = [UIColor colorWithRed:(240.0f / 255.0f)
+                                                                  green:(79.0f / 255.0f)
+                                                                   blue:(94.0f / 255.0f)
+                                                                  alpha:1.0f];
     
     UIFont *titleFont = [UIFont boldSystemFontOfSize:[UIFont labelFontSize]];
     UIFont *messageFont = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineHeightMultiple = 1.1;
     paragraphStyle.alignment = NSTextAlignmentCenter;
-    appearance.titleAttributes = @{NSFontAttributeName : titleFont, NSForegroundColorAttributeName : [UIColor blackColor], NSParagraphStyleAttributeName : paragraphStyle};
+    appearance.titleAttributes = @{NSFontAttributeName : titleFont, NSForegroundColorAttributeName : [UIColor colorWithRed:(240.0f / 255.0f)
+                                                                                                                     green:(79.0f / 255.0f)
+                                                                                                                      blue:(94.0f / 255.0f)
+                                                                                                                     alpha:1.0f], NSParagraphStyleAttributeName : paragraphStyle};
     appearance.messageAttributes = @{NSFontAttributeName : messageFont, NSForegroundColorAttributeName : [UIColor darkGrayColor],  NSParagraphStyleAttributeName : paragraphStyle};
     
     UIFont *defaultButtonFont = [UIFont systemFontOfSize:[UIFont buttonFontSize]];
     UIFont *otherButtonFont = [UIFont boldSystemFontOfSize:[UIFont buttonFontSize]];
-    appearance.defaultButtonAttributes = @{NSFontAttributeName : defaultButtonFont};
-    appearance.cancelButtonAttributes = @{NSFontAttributeName : otherButtonFont};
-    appearance.destructiveButtonAttributes = @{NSFontAttributeName : otherButtonFont, NSForegroundColorAttributeName : [UIColor colorWithRed:0.96f green:0.37f blue:0.31f alpha:1.00f]};
+    appearance.defaultButtonAttributes = @{NSFontAttributeName : defaultButtonFont, NSForegroundColorAttributeName : [UIColor whiteColor]};
+    appearance.cancelButtonAttributes = @{NSFontAttributeName : otherButtonFont, NSForegroundColorAttributeName : [UIColor whiteColor]};
+    appearance.destructiveButtonAttributes = @{NSFontAttributeName : otherButtonFont, NSForegroundColorAttributeName : [UIColor whiteColor]};
 }
 
 - (id)initWithTitle:(NSString *)title message:(NSString *)message
